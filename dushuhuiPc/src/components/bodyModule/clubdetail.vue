@@ -2,9 +2,12 @@
   <div class="hello">
     <div class="allbox">
       <div class="nav">
-        <!--<img src="logo.png" alt="">-->
-        <p>LOGO</p>
-        <p>客户端下载</p>
+        <router-link to="/">
+          <img src="../../../static/logo.png" style="width: 72.5px;height: 30px;margin-top: 10px;" alt="">
+        </router-link>
+        <router-link to="/pcdown">
+          <img src="../../../static/diannao.png" style="width: 92px;height: 20px;margin-top: 10px;" alt="">
+        </router-link>
       </div>
       <div class="swiperBox" style="height: 590px;background: #DDDDDD;">
         <div style="width: 1200px;height: 590px;margin: 0 auto;border-radius: 10px;">
@@ -13,29 +16,20 @@
           </video>
         </div>
       </div>
-      <div class="swiperBox" style="height: 200px;background: #fff;">
+      <div class="swiperBox" style="height: 280px;background: #fff;">
         <div style="background: #fff;width: 1200px;height: 100%;margin: 0 auto;">
           <el-breadcrumb separator-class="el-icon-arrow-right" style="margin-top: 49px;">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item :to="{ path: '/bookclub' }">读书会列表</el-breadcrumb-item>
             <el-breadcrumb-item>活动详情</el-breadcrumb-item>
           </el-breadcrumb>
-            <div style="display: flex;align-items: center;margin-top: 40px;">
-              <img :src="bookclubPage.personInfo[0].personIcon" style="width: 54px;height: 54px;border-radius: 3px;"  alt="">
+            <div style="display: flex;align-items: center;margin-top: 40px;" v-for="(item,i) in bookclubPage.personInfo">
+              <img :src="item.personIcon" style="width: 54px;height: 54px;border-radius: 3px;"  alt="">
               <div style="margin-left: 20px;">
-                <p class="over2" style="color: #333333;font-size: 16px;margin: 0;padding: 0;">主讲人:
-                  <span style="font-weight: bold;margin-left: 7px;"> {{ this.bookclubPage.personInfo[0].personName }}</span>
+                <p class="over2" style="color: #333333;font-size: 16px;margin: 0;padding: 0;">{{ i == 0? '主讲人:' : '作者:'}}
+                  <span style="font-weight: bold;margin-left: 7px;"> {{ item.personName }}</span>
                 </p>
-                <p class="over2">主讲人简介: <span style="margin-left: 7px;">{{ this.bookclubPage.personInfo[0].personDesc }}</span></p>
-              </div>
-            </div>
-            <div style="display: flex;align-items: center;margin-top: 50px;">
-              <img :src="bookclubPage.personInfo[1].personIcon" style="width: 54px;height: 54px;border-radius: 3px;"  alt="">
-              <div style="margin-left: 20px;">
-                <p class="over2" style="color: #333333;font-size: 16px;margin: 0;padding: 0;">作者:
-                  <span style="font-weight: bold;margin-left: 7px;"> {{ this.bookclubPage.personInfo[1].personName }}</span>
-                </p>
-                <p class="over2">作者简介: <span style="margin-left: 7px;">{{ this.bookclubPage.personInfo[1].personDesc }}</span></p>
+                <p class="over2">{{ i == 0? '主讲人简介::' : '作者简介:'}} <span style="margin-left: 7px;">{{ item.personDesc }}</span></p>
               </div>
             </div>
         </div>
@@ -70,7 +64,9 @@
           }
       },
       created () {
-          this.clubdetailpage()
+          this.clubdetailpage();
+        window.scrollTo(0,0);
+
       },
       methods: {
           clubdetailpage() {
@@ -79,7 +75,7 @@
             //步骤一:创建异步对象
             var ajax = new XMLHttpRequest();
             //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-            ajax.open('get', 'http://192.168.101.107:8888/bookClub/videoDetail?id=' + self.activityid );
+            ajax.open('get', 'http://47.52.131.83:8888/bookClub/videoDetail?id=' + self.activityid );
             //步骤三:发送请求
             ajax.send();
             //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -201,7 +197,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 78px;
+    height: 50px;
   }
   .bookImg img {
     width: 100%;
@@ -218,7 +214,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    height: 24px;
+    height: 28px;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
   }

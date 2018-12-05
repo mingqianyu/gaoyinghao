@@ -11,13 +11,13 @@
             <div class="bookLeftA">
               <div class="bookImg">
                 <div class="bookimgleft">
-                  <img :src="bookdetailcon.image.imgUrl" alt="">
+                  <img :src="imgsrc" alt="">
                 </div>
                 <div class="bookImgRight">
                   <p>{{this.bookdetailcon.productName}}</p>
                   <p>作者: <span>{{this.bookdetailcon.author}}</span></p>
                   <p class="over4">书籍简介: <span>{{this.bookdetailcon.contentDscr}}</span></p>
-                  <el-button type="primary" size="mini"> 阅读</el-button>
+                  <el-button type="primary" size="mini" @click="readbook"> 阅读</el-button>
                 </div>
               </div>
               <p class="bookyue"><span style="margin-right: 7px;">{{this.bookdetailcon.readNum}}</span>人阅读</p>
@@ -28,12 +28,12 @@
             </div>
             <div class="bookAdd">
               <p class="bookyue">媒体推荐:</p>
-              <p class="p2 over4">{{this.bookdetailcon.mediaRecommend}}</p>
+              <p class="p2 over41">{{this.bookdetailcon.mediaRecommend}}</p>
             </div>
           </div>
           <div class="bookConRight">
             <p>书籍推荐</p>
-            <div class="bookTui" v-for="(item, i) in catall" style="margin-top: 30px;">
+            <div class="bookTui" v-for="(item, i) in catall" style="margin-top: 30px;" @click="tuijiandian(i)">
               <div class="bookTuiImg">
                 <img :src="item.image.imgUrl" alt="">
               </div>
@@ -63,20 +63,35 @@
           catId: null,
           bookdetailcon: {},
           catall: {},
+          imgsrc: ''
         }
       },
       created() {
-        this.bookdeti()
-        this.catidss()
+        this.bookdeti();
+        this.catidss();
+        window.scrollTo(0,0);
       },
       methods : {
+        tuijiandian(i) {
+          console.log(i)
+          localStorage.setItem("bookId", this.catall[i].productId)
+          localStorage.setItem("catId", this.catall[i].catId)
+          this.bookdeti();
+        },
+        readbook() {
+          // this.$router.push('../../../static/epub/examples/promises.html')
+          // window.open('https://github.com/mingqianyu/project/blob/master/epub/epub/examples/promises.html')
+          localStorage.setItem('productId',this.bookdetailcon.productId)
+          console.log('存贮书本id陈宫',this.bookdetailcon.productId)
+          window.open('http://www.mingqianyu.com?'+ this.bookdetailcon.productId)
+        },
         bookdeti() {
           this.bookid = localStorage.getItem('bookId')
           var self = this;
           //步骤一:创建异步对象
           var ajax = new XMLHttpRequest();
           //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-          ajax.open('get', 'http://192.168.101.107:8888/pcIndex/productDetail?productId=' + self.bookid );
+          ajax.open('get', 'http://47.52.131.83:8888/pcIndex/productDetail?productId=' + self.bookid );
           //步骤三:发送请求
           ajax.send();
           //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -85,13 +100,14 @@
               //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
               // console.log(ajax.responseText);//输入相应的内容
               localStorage.setItem('bookdetailcon', ajax.responseText)
-              self.kklkkl()
+              self.gaoying()
             }
           }
         },
-        kklkkl() {
-          this.bookdetailcon = JSON.parse(localStorage.getItem('bookdetailcon'))
-          console.log(this.bookdetailcon)
+        gaoying() {
+          this.bookdetailcon = JSON.parse(localStorage.getItem('bookdetailcon'));
+          this.imgsrc = this.bookdetailcon.image.imgUrl;
+          console.log('书本详细信息:',this.bookdetailcon)
         },
         catidss() {
           this.catId = localStorage.getItem('catId')
@@ -99,7 +115,7 @@
           //步骤一:创建异步对象
           var ajax = new XMLHttpRequest();
           //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-          ajax.open('get', 'http://192.168.101.107:8888/pcIndex/recommendProduct?catId=' + self.catId );
+          ajax.open('get', 'http://47.52.131.83:8888/pcIndex/recommendProduct?catId=' + self.catId );
           //步骤三:发送请求
           ajax.send();
           //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -134,7 +150,7 @@
   .bookConLeft {
     box-sizing:  border-box;
     width: 850px;
-    height: 625px;
+    height: 660px;
     border: 1px solid #DDDDDD;
     padding: 25px;
   }
@@ -187,7 +203,7 @@
 }
 .bookConRight {
   width: 320px;
-  height: 625px;
+  height: 660px;
   border: 1px solid #ddd;
   box-sizing: border-box;
   padding: 20px;
@@ -235,7 +251,15 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  height: 83px;
+  height: 88px;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+.over41{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  height: 88px;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }

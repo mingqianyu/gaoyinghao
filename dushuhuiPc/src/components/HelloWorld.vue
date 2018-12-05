@@ -2,17 +2,16 @@
   <div class="hello">
     <div class="allbox">
       <div class="nav">
-        <!--<img src="logo.png" alt="">-->
-        <p>LOGO</p>
-        <p>客户端下载</p>
+        <img src="../../static/logo.png" style="width: 72.5px;height: 30px;margin-top: 10px;" alt="">
+        <router-link to="/pcdown">
+          <img src="../../static/diannao.png" style="width: 92px;height: 20px;margin-top: 10px;" alt="">
+        </router-link>
       </div>
-      <div class="swiperBox" style="height: 570px;">
-        <el-carousel :interval="5000" style="position: absolute;
-    left: 50%;
-    margin-left: -960px;
-    width: 1920px;height: 570px;" height="570" arrow="always">
-          <el-carousel-item style="height: 570px;" v-for="item in swiperObj" :key="item.bananerId">
-            <img style="width: 100%;height: 570px;" :src="item.imgUrl" alt="">
+      <a name="top" id="top"></a>
+      <div style="width: 100%;height: 470px;">
+        <el-carousel :interval="5000" style="height: 470px !important;" arrow="always">
+          <el-carousel-item style="height: 470px;" v-for="item in swiperObj" :key="item.bananerId">
+            <img style="width: 100%;height: 470px;" :src="item.imgUrl" alt="">
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -33,7 +32,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 56px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[0].description }}</p>
               </div>
@@ -51,7 +50,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[1].description }}</p>
               </div>
@@ -69,7 +68,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[0].description }}</p>
               </div>
@@ -90,7 +89,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[3].description }}</p>
               </div>
@@ -108,7 +107,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[4].description }}</p>
               </div>
@@ -126,7 +125,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[5].description }}</p>
               </div>
@@ -147,7 +146,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[6].description }}</p>
               </div>
@@ -165,7 +164,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[7].description }}</p>
               </div>
@@ -183,7 +182,7 @@
                 <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
+   height: 57px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[8].description }}</p>
               </div>
@@ -191,7 +190,7 @@
           </div>
 
           <div class="btn">
-            <router-link to="/bookList">点击加载更多</router-link>
+            <router-link to="/bookList" @click="returnTop()">点击加载更多</router-link>
           </div>
         </div>
         <div class="bookClub">
@@ -330,7 +329,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[0].title}}</p>
-              <p class="over3" style="height: 53px;">{{ this.hotList.records[0].content}}</p>
+              <p class="over3" style="height: 35px;">{{ this.hotList.records[0].content}}</p>
             </div>
           </div>
           <div class="hotDetail">
@@ -339,7 +338,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[1].title}}</p>
-              <p class="over3" style="height: 53px;">{{ this.hotList.records[1].content}}</p>
+              <p class="over3" style="height: 35px;">{{ this.hotList.records[1].content}}</p>
             </div>
           </div>
         </div>
@@ -350,7 +349,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[2].title}}</p>
-              <p class="over3" style="height: 53px;">{{ this.hotList.records[2].content}}</p>
+              <p class="over3" style="height: 35px;">{{ this.hotList.records[2].content}}</p>
             </div>
           </div>
           <div class="hotDetail">
@@ -359,7 +358,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[3].title}}</p>
-              <p class="over3" style="height: 53px;">{{ this.hotList.records[3].content}}</p>
+              <p class="over3" style="height: 35px;">{{ this.hotList.records[3].content}}</p>
             </div>
           </div>
         </div>
@@ -373,9 +372,12 @@
           <div style="width: 1200px;margin: 0 auto;">
             <p class="p1">看看</p>
             <div class="xian"></div>
-            <div class="bookClub kankanImg" v-for="(item,i) in kanlistArr" style="margin-top: 30px;" @click="openkankan(i)">
-              <img :src="item.imageUrl" alt="">
+            <div style="display: flex;flex-wrap: wrap;justify-content: left; margin-left: -25px;">
+              <div class="bookClub kankanImg" v-for="(item,i) in kanlistArr" style="margin-top: 30px;margin-left: 27px;" @click="openkankan(i)">
+                <img :src="item.imageUrl" alt="">
+              </div>
             </div>
+
           </div>
           <div class="btn">
             <router-link to="/lookPage">点击加载更多</router-link>
@@ -401,11 +403,11 @@
               </div>
               <div style="display: flex;align-items: center;margin-left: 130px;">
                 <div class="erweima">
-                  <img src="" alt="">
+                  <img src="../../static/app.png" alt="">
                   微信公众号
                 </div>
                 <div class="erweima" style="margin-left: 25px;">
-                  <img src="" alt="">
+                  <img src="../../static/app.png" alt="">
                   读书会APP
                 </div>
               </div>
@@ -432,7 +434,8 @@
         hotList : {},
         bookClubShow: false,
         kanlist: {},
-        kanlistArr: []
+        kanlistArr: [],
+        sdelay: 0
       }
     },
     created() {
@@ -441,6 +444,7 @@
       this.getBookClub();
       this.gethotList();
       this.getkankan();
+      window.scrollTo(0,0);
     },
     mounted() {
       this.bookclick();
@@ -449,6 +453,12 @@
     },
     computed: {},
     methods: {
+   returnTop() {
+    window.scrollBy(0,-100);//Only for y vertical-axis
+    if(document.body.scrollTop>0) {
+      this.sdelay= setTimeout('returnTop()',50);
+    }
+  },
       openkankan(i) {
         var kankanlink = this.kanlistArr[i].href
         window.open(kankanlink)
@@ -495,7 +505,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexBananers?pageNo=' + this.pageNum + '&type=1');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexBananers?pageNo=' + this.pageNum + '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -514,7 +524,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexProducts?pageNo=' + this.pageNum+ '&type=1');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexProducts?pageNo=' + this.pageNum+ '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -534,7 +544,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexActivityInfo?pageNo=' + this.pageNum+ '&type=1');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexActivityInfo?pageNo=' + this.pageNum+ '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -557,7 +567,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexHotInfo?pageNo=' + this.pageNum + '&type=1');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexHotInfo?pageNo=' + this.pageNum + '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -577,7 +587,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexLook?pageNo=' + this.pageNum + '&type=1');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexLook?pageNo=' + this.pageNum + '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -698,7 +708,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 78px;
+    height: 50px;
   }
 .bookImg img {
   width: 100%;
@@ -711,7 +721,10 @@
   .swiperBox {
     height: 420px;
   }
-
+.erweima img{
+  width: 84px;
+  height: 84px;
+}
   .bookList {
     width: 1200px;
     margin: 0 auto;
@@ -736,8 +749,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  height: 63px;
-  -webkit-line-clamp: 3;
+  height: 43px;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
   .allbox {
@@ -876,19 +889,19 @@
   }
 
   .hotImg img {
-    width: 100%;
+    width: 151%;
     height: 100%;
   }
 
   .hotRight {
-    width: 426px;
+    width: 386px;
     height: 100px;
   }
 
   .hotRight p:nth-child(1) {
     font-size: 20px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   .hotRight p:nth-child(2) {
@@ -898,8 +911,8 @@
 
   .kankanImg {
     background: skyblue;
-    width: 1200px;
-    height: 300px;
+    width: 380px;
+    height: 160px;
     border-radius: 7px;
     margin-top: 20px;
   }

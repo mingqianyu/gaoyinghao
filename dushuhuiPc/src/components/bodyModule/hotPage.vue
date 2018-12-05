@@ -58,7 +58,8 @@
       }
     },
     created () {
-      this.hotalllist()
+      this.hotalllist();
+      window.scrollTo(0,0);
     },
     methods: {
       jumpHot(i){
@@ -75,7 +76,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexHotInfo?pageNo=' + this.pageNum+ '&type=2');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexHotInfo?pageNo=' + this.pageNum+ '&type=2');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -358,7 +359,7 @@
   }
 
   .hotImg img {
-    width: 100%;
+    width: 152%;
     height: 100%;
   }
   .over3{
@@ -377,14 +378,14 @@
     -webkit-box-orient: vertical;
   }
   .hotRight {
-    width: 426px;
+    width: 385px;
     height: 100px;
   }
 
   .hotRight p:nth-child(1) {
     font-size: 20px;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 19px;
   }
 
   .hotRight p:nth-child(2) {

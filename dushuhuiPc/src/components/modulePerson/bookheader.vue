@@ -2,17 +2,18 @@
   <div class="hello">
     <div class="allbox">
       <div class="nav">
-        <!--<img src="logo.png" alt="">-->
-        <p>LOGO</p>
-        <p>客户端下载</p>
+        <router-link to="/">
+          <img src="../../../static/logo.png" style="width: 72.5px;height: 30px;margin-top: 10px;" alt="">
+        </router-link>
+        <router-link to="/pcdown">
+        <img src="../../../static/diannao.png" style="width: 92px;height: 20px;margin-top: 10px;" alt="">
+        </router-link>
       </div>
-      <div class="swiperBox" style="height: 570px;">
-        <el-carousel :interval="5000" style="position: absolute;
-    left: 50%;
-    margin-left: -960px;
-    width: 1920px;height: 570px;" height="570" arrow="always">
-          <el-carousel-item style="height: 570px;" v-for="item in swiperObj" :key="item.bananerId">
-            <img style="width: 100%;height: 570px;" :src="item.imgUrl" alt="">
+      <div class="swiperBox" style="height: 470px;">
+        <el-carousel :interval="5000" style="
+    width: 1200px;height: 570px;" height="470" arrow="always">
+          <el-carousel-item style="height: 470px;" v-for="item in swiperObj" :key="item.bananerId">
+            <img style="width: 100%;height: 470px;" :src="item.imgUrl" alt="">
           </el-carousel-item>
         </el-carousel>
       </div>
@@ -32,6 +33,8 @@
     },
     created() {
       this.getList();
+      window.scrollTo(0,0);
+
     },
     computed: {},
     methods: {
@@ -40,7 +43,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexBananers?pageNo=' + this.pageNum);
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexBananers?pageNo=' + this.pageNum);
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -157,7 +160,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 78px;
+    height: 50px;
   }
 
   .swiperBox {

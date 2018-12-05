@@ -39,7 +39,8 @@
     },
     created() {
       this.bookdeti123()
-      this.catidss()
+      this.catidss();
+
     },
     methods : {
       bookdeti123() {
@@ -48,7 +49,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/discovery/hotDetail?id=' + self.hotid );
+        ajax.open('get', 'http://47.52.131.83:8888/discovery/hotDetail?id=' + self.hotid );
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -71,7 +72,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/recommendProduct?catId=' + self.catId );
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/recommendProduct?catId=' + self.catId );
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用

@@ -25,11 +25,11 @@
             </div>
             <div style="display: flex;align-items: center;margin-left: 130px;">
               <div class="erweima">
-                <img src="" alt="">
+                <img src="../../../static/app.png" alt="">
                 微信公众号
               </div>
               <div class="erweima" style="margin-left: 25px;">
-                <img src="" alt="">
+                <img src="../../../static/app.png" alt="">
                 读书会APP
               </div>
             </div>
@@ -139,7 +139,10 @@
     overflow: hidden;
     margin-top: -70px;
   }
-
+.erweima img {
+  width: 84px;
+  height: 84px;
+}
   .swiperBox {
     height: 200px;
     width: 100%;

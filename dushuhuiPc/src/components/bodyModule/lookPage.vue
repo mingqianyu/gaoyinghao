@@ -11,8 +11,8 @@
             <el-breadcrumb-item>看看列表</el-breadcrumb-item>
           </el-breadcrumb>
           <div class="xian"></div>
-          <div class="hotCon" style="display: flex;flex-wrap: wrap">
-            <div class="bookClub kankanImg" v-for="(item, i ) in kanlistaaarrr" style="margin-top: 30px;"
+          <div class="hotCon" style="display: flex;flex-wrap: wrap;justify-content: left; margin-left: -20px;">
+            <div class="bookClub kankanImg" v-for="(item, i ) in kanlistaaarrr" style="margin-top: 30px;margin-left: 25px;"
                  @click="sendopenkan(i)">
               <img :src="item.imageUrl" style="border-radius: 7px;" alt="">
             </div>
@@ -50,7 +50,8 @@
       }
     },
     created() {
-      this.getallkanlist()
+      this.getallkanlist();
+      window.scrollTo(0,0);
     },
     methods: {
       sendopenkan(i) {
@@ -66,7 +67,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://192.168.101.107:8888/pcIndex/indexLook?pageNo=' + this.pageNum + '&type=2');
+        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexLook?pageNo=' + this.pageNum + '&type=2');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -688,8 +689,8 @@
 
   .kankanImg {
     background: skyblue;
-    width: 1200px;
-    height: 300px;
+    width: 380px;
+    height: 160px;
     border-radius: 7px;
     margin-top: 20px;
   }

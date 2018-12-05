@@ -8,6 +8,8 @@ import lookPage from '@/components/bodyModule/lookPage'
 import bookList from '@/components/bodyModule/bookList'
 import clubdetail from '@/components/bodyModule/clubdetail'
 import hotdetail from '@/components/bodyModule/hotdetail'
+import bookread from '@/components/bodyModule/bookread'
+import pcdown from '@/components/bodyModule/pcdown'
 
 Vue.use(Router)
 
@@ -52,6 +54,16 @@ export default new Router({
       path: '/hotdetail',
       name: '热点详情',
       component: hotdetail
+    },
+    {
+      path: '/bookread',
+      name: '阅读书籍',
+      component: bookread
+    },
+    {
+      path: '/pcdown',
+      name: '阅读书籍',
+      component: pcdown
     }
   ]
 })
