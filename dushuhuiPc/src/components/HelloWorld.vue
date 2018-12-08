@@ -284,7 +284,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[0].title}}</p>
-              <p class="over3" style="height: 35px;">{{ this.hotList.records[0].content}}</p>
+              <p class="over3">{{ this.hotList.records[0].content}}</p>
             </div>
           </div>
           <div class="hotDetail">
@@ -293,7 +293,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[1].title}}</p>
-              <p class="over3" style="height: 35px;">{{ this.hotList.records[1].content}}</p>
+              <p class="over3" >{{ this.hotList.records[1].content}}</p>
             </div>
           </div>
         </div>
@@ -304,7 +304,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[2].title}}</p>
-              <p class="over3" style="height: 35px;">{{ this.hotList.records[2].content}}</p>
+              <p class="over3" >{{ this.hotList.records[2].content}}</p>
             </div>
           </div>
           <div class="hotDetail">
@@ -313,7 +313,7 @@
             </div>
             <div class="hotRight">
               <p>{{this.hotList.records[3].title}}</p>
-              <p class="over3" style="height: 35px;">{{ this.hotList.records[3].content}}</p>
+              <p class="over3" >{{ this.hotList.records[3].content}}</p>
             </div>
           </div>
         </div>
@@ -704,7 +704,6 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  height: 43px;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
@@ -859,6 +858,7 @@
   .hotRight {
     width: 386px;
     height: 100px;
+    overflow: hidden;
   }
 
   .hotRight p:nth-child(1) {
