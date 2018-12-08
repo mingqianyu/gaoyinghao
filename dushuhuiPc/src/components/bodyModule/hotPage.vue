@@ -379,7 +379,7 @@
   }
   .hotRight {
     width: 385px;
-    height: 105px;
+    height: 102px;
     overflow: hidden;
   }
 

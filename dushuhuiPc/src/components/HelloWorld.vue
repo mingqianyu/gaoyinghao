@@ -749,6 +749,7 @@
   .bookRight {
     width: 200px;
     height: 135px;
+    overflow: hidden;
   }
 
   .bookRight p:nth-child(1) {
