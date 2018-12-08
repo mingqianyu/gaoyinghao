@@ -366,7 +366,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    height: 53px;
+    /*height: 53px;*/
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }.over1{
@@ -379,7 +379,8 @@
   }
   .hotRight {
     width: 385px;
-    height: 100px;
+    height: 105px;
+    overflow: hidden;
   }
 
   .hotRight p:nth-child(1) {

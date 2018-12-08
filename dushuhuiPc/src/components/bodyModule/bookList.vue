@@ -24,7 +24,6 @@
                   <p style="  overflow: hidden;
     text-overflow: ellipsis;
    display: -webkit-box;
-   height: 60px;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;">书籍简介: {{item.description }}</p>
                 </div>
