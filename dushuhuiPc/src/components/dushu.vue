@@ -38,7 +38,7 @@
                 <img :src="item.image.imgUrl" alt="">
               </div>
               <div class="bookTuiRight">
-                <p>{{item.productName}}</p>
+                <p class="over122222">{{item.productName}}</p>
                   <p>作者: <span>{{item.author }}</span></p>
                 <p class="over2">书籍简介: <span>{{item.description}}
                 </span></p>
@@ -269,6 +269,14 @@
   display: -webkit-box;
   height: 33px;
   -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.over122222{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  height: 30px;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 .bookTuiImg img {

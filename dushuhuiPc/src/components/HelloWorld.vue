@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" style="height: 3300px;overflow: hidden;">
     <div class="allbox">
       <div class="nav">
         <img src="../../static/logo.png" style="width: 72.5px;height: 30px;margin-top: 10px;" alt="">
@@ -28,13 +28,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[0].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[0].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 56px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[0].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[0].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[0].description }}</p>
               </div>
             </div>
             <div class="bookDetail">
@@ -46,13 +41,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[1].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[1].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[1].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[1].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[1].description }}</p>
               </div>
             </div>
             <div class="bookDetail">
@@ -64,13 +54,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[2].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[2].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[0].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[2].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[0].description }}</p>
               </div>
             </div>
           </div>
@@ -85,13 +70,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[3].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[3].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[3].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[3].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[3].description }}</p>
               </div>
             </div>
             <div class="bookDetail">
@@ -103,13 +83,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[4].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[4].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[4].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[4].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[4].description }}</p>
               </div>
             </div>
             <div class="bookDetail">
@@ -121,13 +96,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[5].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[5].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[5].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[5].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[5].description }}</p>
               </div>
             </div>
           </div>
@@ -142,13 +112,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[6].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[6].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[6].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[6].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[6].description }}</p>
               </div>
             </div>
             <div class="bookDetail">
@@ -160,13 +125,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[7].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[7].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[7].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[7].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[7].description }}</p>
               </div>
             </div>
             <div class="bookDetail">
@@ -178,13 +138,8 @@
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
                   {{ this.Booklist.records[8].productName }}
                 </p>
-                <p>作者: {{this.Booklist.records[8].author}}</p>
-                <p style="  overflow: hidden;
-    text-overflow: ellipsis;
-   display: -webkit-box;
-   height: 57px;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;">书籍简介: {{this.Booklist.records[8].description }}</p>
+                <p class="over1">作者: {{this.Booklist.records[8].author}}</p>
+                <p class="shouover2">书籍简介: {{this.Booklist.records[8].description }}</p>
               </div>
             </div>
           </div>
@@ -753,6 +708,14 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+.over1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  height: 19px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
   .allbox {
     margin: 0 auto;
     width: 1200px;
@@ -924,5 +887,13 @@
   width: 85px;
   height: 110px;
 }
-
+.shouover2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /*height: 65px;*/
+  font-size: 14px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 </style>
