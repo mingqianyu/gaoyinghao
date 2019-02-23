@@ -20,19 +20,19 @@
           <p class="p1">书籍推荐</p>
           <div class="xian"></div>
           <div class="bookListA">
-            <div class="bookDetail">
+            <div class="bookDetail" v-for="(item,index) in Booklist.records">
               <div class="bookImg">
-                <img :src="Booklist.records[0].image.imgUrl" alt="">
+                <img :src="item.image.imgUrl" alt="">
               </div>
               <div class="bookRight" style=" ">
                 <p style="text-overflow:ellipsis;width: 200px;white-space:nowrap;overflow: hidden ">
-                  {{ this.Booklist.records[0].productName }}
+                  {{ item.productName }}
                 </p>
-                <p class="over1">作者: {{this.Booklist.records[0].author}}</p>
-                <p class="shouover2">书籍简介: {{this.Booklist.records[0].description }}</p>
+                <p class="over1">作者: {{item.author}}</p>
+                <p class="shouover2">书籍简介: {{item.description }}</p>
               </div>
             </div>
-            <div class="bookDetail">
+            <!-- <div class="bookDetail">
               <div class="bookImg">
                 <img :src="Booklist.records[1].image.imgUrl" alt="">
               </div>
@@ -44,8 +44,8 @@
                 <p class="over1">作者: {{this.Booklist.records[1].author}}</p>
                 <p class="shouover2">书籍简介: {{this.Booklist.records[1].description }}</p>
               </div>
-            </div>
-            <div class="bookDetail">
+            </div> -->
+            <!-- <div class="bookDetail">
               <div class="bookImg">
                 <img :src="Booklist.records[2].image.imgUrl" alt="">
               </div>
@@ -56,11 +56,11 @@
                 </p>
                 <p class="over1">作者: {{this.Booklist.records[2].author}}</p>
                 <p class="shouover2">书籍简介: {{this.Booklist.records[0].description }}</p>
-              </div>
+              </div> -->
             </div>
           </div>
           <!--第二行-->
-          <div class="bookListA">
+          <!-- <div class="bookListA">
             <div class="bookDetail">
               <div class="bookImg">
                 <img :src="Booklist.records[3].image.imgUrl" alt="">
@@ -100,9 +100,9 @@
                 <p class="shouover2">书籍简介: {{this.Booklist.records[5].description }}</p>
               </div>
             </div>
-          </div>
+          </div> -->
             <!--第三行-->
-          <div class="bookListA">
+          <!-- <div class="bookListA">
             <div class="bookDetail">
               <div class="bookImg">
                 <img :src="Booklist.records[6].image.imgUrl" alt="">
@@ -142,7 +142,7 @@
                 <p class="shouover2">书籍简介: {{this.Booklist.records[8].description }}</p>
               </div>
             </div>
-          </div>
+          </div> -->
 
           <div class="btn">
             <router-link to="/bookList" @click="returnTop()">点击加载更多</router-link>
@@ -274,53 +274,56 @@
 
       <!--热点-->
       <div style="height: 290px;"></div>
-      <div class="hot">
-        <p class="p1">热点</p>
-        <div class="xian"></div>
-        <div class="hotCon">
-          <div class="hotDetail">
-            <div class="hotImg">
-              <img :src="hotList.records[0].imageUrl" alt="">
+      <div class="swiperBox">
+        <div class="hot">
+          <p class="p1">热点</p>
+          <div class="xian"></div>
+          <div class="hotCon">
+            <div class="hotDetail">
+              <div class="hotImg">
+                <img :src="hotList.records[0].imageUrl" alt="">
+              </div>
+              <div class="hotRight">
+                <p>{{this.hotList.records[0].title}}</p>
+                <p class="over3">{{ this.hotList.records[0].content}}</p>
+              </div>
             </div>
-            <div class="hotRight">
-              <p>{{this.hotList.records[0].title}}</p>
-              <p class="over3">{{ this.hotList.records[0].content}}</p>
-            </div>
-          </div>
-          <div class="hotDetail">
-            <div class="hotImg">
-              <img :src="hotList.records[1].imageUrl" alt="">
-            </div>
-            <div class="hotRight">
-              <p>{{this.hotList.records[1].title}}</p>
-              <p class="over3" >{{ this.hotList.records[1].content}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="hotCon" style="margin-top: 40px;">
-          <div class="hotDetail">
-            <div class="hotImg">
-              <img :src="hotList.records[2].imageUrl" alt="">
-            </div>
-            <div class="hotRight">
-              <p>{{this.hotList.records[2].title}}</p>
-              <p class="over3" >{{ this.hotList.records[2].content}}</p>
+            <div class="hotDetail">
+              <div class="hotImg">
+                <img :src="hotList.records[1].imageUrl" alt="">
+              </div>
+              <div class="hotRight">
+                <p>{{this.hotList.records[1].title}}</p>
+                <p class="over3" >{{ this.hotList.records[1].content}}</p>
+              </div>
             </div>
           </div>
-          <div class="hotDetail">
-            <div class="hotImg">
-              <img :src="hotList.records[3].imageUrl" alt="">
+          <div class="hotCon" style="margin-top: 40px;">
+            <div class="hotDetail">
+              <div class="hotImg">
+                <img :src="hotList.records[2].imageUrl" alt="">
+              </div>
+              <div class="hotRight">
+                <p>{{this.hotList.records[2].title}}</p>
+                <p class="over3" >{{ this.hotList.records[2].content}}</p>
+              </div>
             </div>
-            <div class="hotRight">
-              <p>{{this.hotList.records[3].title}}</p>
-              <p class="over3" >{{ this.hotList.records[3].content}}</p>
+            <div class="hotDetail">
+              <div class="hotImg">
+                <img :src="hotList.records[3].imageUrl" alt="">
+              </div>
+              <div class="hotRight">
+                <p>{{this.hotList.records[3].title}}</p>
+                <p class="over3" >{{ this.hotList.records[3].content}}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="btn">
-          <router-link to="/hotPage">点击加载更多</router-link>
+          <div class="btn">
+            <router-link to="/hotPage">点击加载更多</router-link>
+          </div>
         </div>
       </div>
+      
       <!--看看-->
       <div class="swiperBox" style="margin-top: 59px;height: 2100px;">
         <div class="center" style="height: 100%;">
@@ -460,7 +463,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexBananers?pageNo=' + this.pageNum + '&type=1');
+        ajax.open('get', 'http://www.qmdsw.com/mall/pcIndex/indexBananers?pageNo=' + this.pageNum + '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -479,7 +482,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexProducts?pageNo=' + this.pageNum+ '&type=1');
+        ajax.open('get', 'http://www.qmdsw.com/mall/pcIndex/indexProducts?pageNo=' + this.pageNum+ '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -488,18 +491,17 @@
             //步骤五 如果能够进到这个判断 说明 数据 完美的回来了,并且请求的页面是存在的
             // console.log(ajax.responseText);//输入相应的内容
             localStorage.setItem('Booklist', ajax.responseText)
-
           }
         }
         this.Booklist = JSON.parse(localStorage.getItem('Booklist'))
-        // console.log(this.Booklist)
+        console.log(this.Booklist,'shuben')
       },
       getBookClub() {
         var self = this;
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexActivityInfo?pageNo=' + this.pageNum+ '&type=1');
+        ajax.open('get', 'http://www.qmdsw.com/mall/pcIndex/indexActivityInfo?pageNo=' + this.pageNum+ '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -522,7 +524,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexHotInfo?pageNo=' + this.pageNum + '&type=1');
+        ajax.open('get', 'http://www.qmdsw.com/mall/pcIndex/indexHotInfo?pageNo=' + this.pageNum + '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -542,7 +544,7 @@
         //步骤一:创建异步对象
         var ajax = new XMLHttpRequest();
         //步骤二:设置请求的url参数,参数一是请求的类型,参数二是请求的url,可以带参数,动态的传递参数starName到服务端
-        ajax.open('get', 'http://47.52.131.83:8888/pcIndex/indexLook?pageNo=' + this.pageNum + '&type=1');
+        ajax.open('get', 'http://www.qmdsw.com/mall/pcIndex/indexLook?pageNo=' + this.pageNum + '&type=1');
         //步骤三:发送请求
         ajax.send();
         //步骤四:注册事件 onreadystatechange 状态改变就会调用
@@ -730,13 +732,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 0px;
+    flex-wrap: wrap;
   }
 
   .bookDetail {
     width: 320px;
     display: flex;
     align-items: center;
+    margin-top: 35px;
     justify-content: space-between;
   }
 
@@ -829,7 +833,8 @@
   }
 
   .hot {
-    width: 100%;
+    width: 1200px;
+    margin: 0 auto;
   }
 
   .hotCon {
